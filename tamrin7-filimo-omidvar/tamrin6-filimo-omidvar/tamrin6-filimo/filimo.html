@@ -1,0 +1,355 @@
+<html>
+    <head>
+        <style>
+            body{
+                direction:rtl;
+                margin:0;
+                padding:0;
+            }
+            h2,p{
+                margin:0;
+            }
+            a{
+                text-decoration: none;
+                color:#fff;
+            }
+            a:visited{
+                color:#fff;
+            }
+
+            ul,li{
+                padding:0;
+                margin:0;
+                list-style: none;
+            }
+            .menuBar{
+                height:50px;
+                background: #000;
+            }
+
+            .topBar{
+                background: black;
+                padding:10px 30px 10px 0;
+                position:fixed;
+                width:100%;
+                z-index:20;
+            }
+
+            .topBar .filimoLogo{
+                width:80px;
+                height:25px;
+                float:right;
+            }
+
+
+            .topBar .filimoLogo img{
+                width:80px;
+                height:25px;
+                object-fit:cover;
+            }
+          
+            .topBarWrapper{
+                width:1300px;
+                margin:0 auto;
+                overflow:hidden; 
+            }
+            .topmenu{
+                float:right;
+                margin-right:50px;
+            }
+
+            .topmenu ul li{
+                float:right;
+                padding:5px 30px;
+                color:#fff;
+            }
+
+            .topmenu ul li:hover{
+                color:rgb(231, 171, 59);
+            }
+
+            .registerSection{
+                float:left;
+                margin-left:50px;
+            }
+            .registerSection ul li{
+                float: right;
+                font-weight: bold;
+            }
+
+            .registerSection .register{
+                background:#1cb561;
+                padding:10px 20px;
+                border-radius: 5px;
+                margin-left:20px;
+            }
+
+            .registerSection .enter{
+                background:#585757;
+                padding:10px;
+                border-radius: 5px;  
+            }
+
+            /* .bottomBar{
+                background: linear-gradient(rgba(33, 33, 34, 0.7), rgba(33, 33, 34, 0.7)), url("https://static.cdn.asset.filimo.com/flmt/mov_cvr_137093_151.jpg?width=1440&quality=85&secret=0Lkcs3iwwmP5xXWubldDcg"); 
+                background-size:cover;
+            } */
+            
+            .bottomBar{
+                background:url(https://static.cdn.asset.filimo.com/flmt/mov_cvr_137093_151.jpg?width=1440&quality=85&secret=0Lkcs3iwwmP5xXWubldDcg) ;
+                background-size: cover;
+            }
+
+            .bottomBar:after{
+                content:"";
+                position:absolute;
+                bottom:0;
+                left:0;
+                top:0;
+                right:0;
+                background: rgba(0,0,0,.6);
+                
+            }
+
+            .wrapper{
+                width:1200px;
+                margin:0 auto;
+                padding:100px 0;
+                position:relative;
+                z-index:3;
+            }
+
+            .topWrapper{
+                overflow:hidden;
+            }
+            .movieLogo{
+                width:240px;
+                height:320px;
+                float:right;
+                position:relative;
+            }
+            .movieLogo .mainLogo{
+                width:100%;
+                height:100%;
+                /* object-fit:cover; */
+                position:absolute;
+                top:0;
+                right:0;
+                
+            }
+
+            .movieLogo:after{
+                content:"";
+                position:absolute;
+                bottom:0;
+                left:0;
+                top:0;
+                right:0;
+                background-image: linear-gradient(rgba(215, 215, 220, 0.047), rgb(11, 11, 11));
+            }
+
+             
+            .movieLogo .dark{
+                background: rgba(0,0,0,.5);
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                right:0;
+                opacity:0;
+                transition: opacity 3s;
+            }
+
+             .dark img{
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                position:absolute;
+             }
+
+            .dark:hover{
+                opacity:1;
+            }
+
+            .movieLogo .exclusive{
+                color:#fff;
+                position: absolute;
+                bottom:0;
+                left:50%;
+                transform: translateX(-50%);
+                z-index: 3;
+            }
+            .movieLogo .exclusive b{
+                color:#fdc13c;
+            }
+            .movieLogo .freeLable{
+                position: absolute;
+                top:10px;
+                left:10px;
+                color:#1cb561;
+                background-color: #000;
+                border-radius: 10px;
+                padding:4px 5px;
+                font-size: small;
+                font-weight:bold;
+            }
+
+            .movieInfo{
+                float:right;
+                margin-right:20px;
+            }
+
+            .movieInfo .movieName{
+                color:#fff;
+                line-height: 40px;
+            }
+            .movieAgeRange{
+                overflow: hidden;
+                padding-top:20px;
+            }
+            .movieAgeRange p{
+                color:#fdc13c;
+                float:right;
+                margin-top:3px;
+            }
+
+            .movieAgeRange img{
+                float:right;
+                margin-left:5px;
+            }
+
+            .movieInfo .directorInfo{
+                color:#fff;
+                margin-top:40px;
+                font-size:smaller;
+                line-height: 40px;
+            }
+          
+            .linksSection {
+                color:#fff;
+                font-weight:bold;
+                overflow:hidden;
+                margin-top:20px;
+            }
+            .linksSection ul li{
+                float:right;
+                background: rgb(100, 97, 97);
+                border-radius: 20px;
+                padding:5px;
+                margin-left:10px;   
+            }
+            .linksSection .lineSpan{
+                background:none;
+                font-size:large;
+                padding:0;
+                color: #585757;
+            }
+
+            .bottomWrapper{
+                overflow:hidden;
+                margin-top:50px;
+                border-top: solid;
+                border-color: #585757;
+                padding-top:30px;
+            }
+
+            .bottomWrapper .follow{
+                float:right;
+                
+            }
+
+            .bottomWrapper .follow ul li{
+                float:right;
+                background-color:#585757c2;
+                padding:10px;
+                border-radius:20px;
+                margin-left:10px;
+            }
+
+            .bottomWrapper .watchFree{
+                float:left;
+                background-color: #1cb561;
+                color:#fff;
+                padding:10px;
+                border-radius:20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="topBar">
+            <div class="topBarWrapper">
+                <div class="filimoLogo">
+                    <img src="fa-filimo-dark-logo.webp"/>
+                </div>
+                <div class="topmenu">
+                    <ul>
+                        <li>فیلیموتور</li>
+                        <li>فیلیمو مدرسه</li>
+                        <li>جستجو</li>
+                    </ul>
+                </div>
+
+                <div class="registerSection">
+                    <ul>
+                        <li class="register"><a href="#">خرید اشتراک</a></li>
+                        <li class="enter"><a href="#">ورود</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottomBar">
+            <div class="wrapper">
+                <div class="topWrapper">
+                    <div class="movieLogo">
+                        <img class="mainLogo" src="https://static.cdn.asset.filimo.com/flmt/mov_137093_61430.jpg?width=300&quality=85&secret=lOOPqvmWllobEcXauCmg8Q"/>
+                        <div class="dark">
+                            <img src="video-play-24.png"/>
+                        </div>
+                        <p class="exclusive">  اختصاصی <b>فیلیمو</b> </p>
+                        <p class="freeLable">رایگان</p>
+                    </div>
+                    <div class="movieInfo"> 
+                        <div class="movieName">
+                            <h2>شوی شب های مافیا: زودیاک</h2>
+                            <p>Mafia Nights: Zodiac</p>
+                        </div>
+                        <div class="movieAgeRange">              
+                            <img src="15.svg"/>
+                            <p>مناسب برای بالای 15 سال</p>
+    
+                        </div>
+                        <div class="directorInfo">
+                            <p>کارگردان:محمدرضا رضائیان</p>
+                            <p>محصول ایران - 1402</p>
+                        </div>
+                        <div class="linksSection">
+                            <ul>
+                                <li><a href="">گیم شو</a></li>
+                                <li><a href="">خانوادگی</a></li>
+                                <li class="lineSpan">|</li>
+                                <li><a href="">1 فصل و 13 قسمت</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>
+                
+                <div class="BottomWrapper">
+                    <div class="follow">
+                        <ul>
+                            <li><a href="">دنبال می کنم</a></li>
+                            <li><a href=""><img src="like-thumbs-up-3070.png"/></a></li>
+                            <li><a href=""><img src="dislike-898.png" /></a></li>
+                        </ul>
+                    </div>
+                    <div class="watchFree">
+                        <a href="">تماشای رایگان ایرانسلی</a>
+                    </div>
+                </div>
+
+           </div>
+
+           
+        </div>
+    </body>
+</html>
